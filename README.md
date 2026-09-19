@@ -1,31 +1,28 @@
 # CDnet2014-Format Change Detection Training Set
 
-This repository contains an extra training dataset for per-pixel binary change detection, formatted strictly according to the **CDnet2014** specification for direct consumption by the **MSCPNet** (multi-scale contrast-preserving encoder-decoder) training pipeline.
+This repository contains the complete conversion pipeline, verification suite, and specification for an extra training dataset formatted strictly according to the **CDnet2014** standard for direct consumption by the **MSCPNet** (multi-scale contrast-preserving encoder-decoder) training pipeline.
 
-All scenes are assembled from verified public video sources that provide pre-existing, per-pixel ground-truth foreground masks (no bounding-box conversions, no manual hand annotations).
-
----
-
-## 1. Output Format Specification
-
-The dataset is structured under `data/extra/<scene_name>/`:
-
-```
-data/extra/<scene_name>/
-    input/in%06d.jpg          # 3-channel RGB JPEG, sequential from 000001
-    groundtruth/gt%06d.png    # 8-bit SINGLE-CHANNEL PNG, 1:1 matching index with input
-    ROI.bmp                   # Static 8-bit BMP (255 = evaluated, <127 = excluded)
-```
-
-### Exact Pixel Encodings
-*   `0` = **Background**
-*   `85` = **Shadow** *(treated as background by the loader)*
-*   `170` = **Unknown / Ignore** *(contour uncertainty, excluded from loss computation)*
-*   `255` = **Foreground** *(moving object)*
+All scenes are assembled from verified public video sources that provide pre-existing, per-pixel ground-truth foreground masks.
 
 ---
 
-## 2. Dataset Overview
+## 📦 Dataset Access on Kaggle
+
+The pre-processed, verified dataset is hosted on Kaggle:
+
+🔗 **Kaggle Dataset Link:** [**Kaggle Dataset (Private / Accessible via Shared Link)**](https://www.kaggle.com/datasets) *(Update with your exact link)*
+
+### Downloading via Kaggle CLI
+To download and extract the dataset directly into this repository:
+```bash
+# 1. Ensure your kaggle.json is placed in ~/.kaggle/kaggle.json
+# 2. Download the dataset zip
+kaggle datasets download -d <your-kaggle-username>/<dataset-name> -p data/extra --unzip
+```
+
+---
+
+## 1. Dataset Overview
 
 *   **Total Converted & Verified Frames**: **7,262 frames** across **12 diverse scenes**
 *   **Verification Status**: **100% PASS** on all 5 gates in `scripts/verify.py`
@@ -47,19 +44,29 @@ data/extra/<scene_name>/
 
 ---
 
-## 3. Directory Layout
+## 2. Output Format Specification
+
+The dataset is structured under `data/extra/<scene_name>/`:
+
+```
+data/extra/<scene_name>/
+    input/in%06d.jpg          # 3-channel RGB JPEG, sequential from 000001
+    groundtruth/gt%06d.png    # 8-bit SINGLE-CHANNEL PNG, 1:1 matching index with input
+    ROI.bmp                   # Static 8-bit BMP (255 = evaluated, <127 = excluded)
+```
+
+### Exact Pixel Encodings
+*   `0` = **Background**
+*   `85` = **Shadow** *(treated as background by the loader)*
+*   `170` = **Unknown / Ignore** *(contour uncertainty, excluded from loss computation)*
+*   `255` = **Foreground** *(moving object)*
+
+---
+
+## 3. Repository Structure
 
 ```
 .
-├── data/
-│   ├── extra/                 # Converted CDnet2014 scenes (ready for training)
-│   │   ├── lasiesta_i_si_01/
-│   │   │   ├── input/         # in000001.jpg .. in000300.jpg
-│   │   │   ├── groundtruth/   # gt000001.png .. gt000300.png
-│   │   │   └── ROI.bmp
-│   │   ├── bmc_111/
-│   │   └── ...
-│   └── raw/                   # Cached source archives (RAR, MP4, ZIP)
 ├── reports/                   # 4x4 visual overlay montages for quality inspection
 │   ├── lasiesta_i_si_01_overlay.png
 │   ├── bmc_111_overlay.png
@@ -71,7 +78,8 @@ data/extra/<scene_name>/
 ├── DATASET.md                 # Detailed report with provenance and exact mask mappings
 ├── SOURCES.md                 # Discovery report with verified live download links
 ├── dataset_index.json         # Machine-readable JSON manifest of all scenes
-└── requirements.txt           # Python dependencies
+├── requirements.txt           # Python dependencies
+└── README.md
 ```
 
 ---
@@ -81,22 +89,25 @@ data/extra/<scene_name>/
 ### Setup Environment
 ```bash
 python -m venv .venv
+# On Windows:
 .venv\Scripts\pip install -r requirements.txt
+# On Linux/macOS:
+source .venv/bin/activate && pip install -r requirements.txt
 ```
 
-### 1. Download Datasets
+### 1. Download Datasets from Source
 ```bash
-.venv\Scripts\python scripts/fetch.py --sources lasiesta bmc ino
+python scripts/fetch.py --sources lasiesta bmc ino
 ```
 
 ### 2. Convert to CDnet2014 Format
 ```bash
-.venv\Scripts\python scripts/to_cdnet.py --sources lasiesta bmc ino
+python scripts/to_cdnet.py --sources lasiesta bmc ino
 ```
 
 ### 3. Run Verification Gate & Generate Overlays
 ```bash
-.venv\Scripts\python scripts/verify.py
+python scripts/verify.py
 ```
 
 ---

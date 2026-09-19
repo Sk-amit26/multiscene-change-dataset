@@ -13,12 +13,12 @@ __pycache__/
 *.so
 *.dylib
 
-# Cached raw dataset archives (downloadable via scripts/fetch.py)
-data/raw/
-*.part
-*.rar
+# Dataset binaries and ZIP archives (hosted on Kaggle)
+data/
 *.zip
 *.tar.gz
+*.rar
+*.part
 
 # OS generated files
 .DS_Store
