@@ -1,0 +1,163 @@
+{
+  "name": "CDnet2014-Format Extra Change Detection Dataset",
+  "total_scenes": 12,
+  "total_frames": 7262,
+  "scenes": [
+    {
+      "scene_name": "bmc_111",
+      "frame_count": 1499,
+      "resolution": {
+        "width": 640,
+        "height": 480,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\bmc_111\\input",
+      "groundtruth_dir": "data\\extra\\bmc_111\\groundtruth",
+      "roi_path": "data\\extra\\bmc_111\\ROI.bmp",
+      "overlay_report": "reports\\bmc_111_overlay.png"
+    },
+    {
+      "scene_name": "bmc_112",
+      "frame_count": 1502,
+      "resolution": {
+        "width": 640,
+        "height": 480,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\bmc_112\\input",
+      "groundtruth_dir": "data\\extra\\bmc_112\\groundtruth",
+      "roi_path": "data\\extra\\bmc_112\\ROI.bmp",
+      "overlay_report": "reports\\bmc_112_overlay.png"
+    },
+    {
+      "scene_name": "bmc_121",
+      "frame_count": 1499,
+      "resolution": {
+        "width": 640,
+        "height": 480,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\bmc_121\\input",
+      "groundtruth_dir": "data\\extra\\bmc_121\\groundtruth",
+      "roi_path": "data\\extra\\bmc_121\\ROI.bmp",
+      "overlay_report": "reports\\bmc_121_overlay.png"
+    },
+    {
+      "scene_name": "ino_crossroads",
+      "frame_count": 12,
+      "resolution": {
+        "width": 320,
+        "height": 240,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\ino_crossroads\\input",
+      "groundtruth_dir": "data\\extra\\ino_crossroads\\groundtruth",
+      "roi_path": "data\\extra\\ino_crossroads\\ROI.bmp",
+      "overlay_report": "reports\\ino_crossroads_overlay.png"
+    },
+    {
+      "scene_name": "lasiesta_i_bs_01",
+      "frame_count": 275,
+      "resolution": {
+        "width": 352,
+        "height": 288,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\lasiesta_i_bs_01\\input",
+      "groundtruth_dir": "data\\extra\\lasiesta_i_bs_01\\groundtruth",
+      "roi_path": "data\\extra\\lasiesta_i_bs_01\\ROI.bmp",
+      "overlay_report": "reports\\lasiesta_i_bs_01_overlay.png"
+    },
+    {
+      "scene_name": "lasiesta_i_ca_01",
+      "frame_count": 350,
+      "resolution": {
+        "width": 352,
+        "height": 288,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\lasiesta_i_ca_01\\input",
+      "groundtruth_dir": "data\\extra\\lasiesta_i_ca_01\\groundtruth",
+      "roi_path": "data\\extra\\lasiesta_i_ca_01\\ROI.bmp",
+      "overlay_report": "reports\\lasiesta_i_ca_01_overlay.png"
+    },
+    {
+      "scene_name": "lasiesta_i_ca_02",
+      "frame_count": 525,
+      "resolution": {
+        "width": 352,
+        "height": 288,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\lasiesta_i_ca_02\\input",
+      "groundtruth_dir": "data\\extra\\lasiesta_i_ca_02\\groundtruth",
+      "roi_path": "data\\extra\\lasiesta_i_ca_02\\ROI.bmp",
+      "overlay_report": "reports\\lasiesta_i_ca_02_overlay.png"
+    },
+    {
+      "scene_name": "lasiesta_i_il_01",
+      "frame_count": 300,
+      "resolution": {
+        "width": 352,
+        "height": 288,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\lasiesta_i_il_01\\input",
+      "groundtruth_dir": "data\\extra\\lasiesta_i_il_01\\groundtruth",
+      "roi_path": "data\\extra\\lasiesta_i_il_01\\ROI.bmp",
+      "overlay_report": "reports\\lasiesta_i_il_01_overlay.png"
+    },
+    {
+      "scene_name": "lasiesta_i_mb_01",
+      "frame_count": 450,
+      "resolution": {
+        "width": 352,
+        "height": 288,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\lasiesta_i_mb_01\\input",
+      "groundtruth_dir": "data\\extra\\lasiesta_i_mb_01\\groundtruth",
+      "roi_path": "data\\extra\\lasiesta_i_mb_01\\ROI.bmp",
+      "overlay_report": "reports\\lasiesta_i_mb_01_overlay.png"
+    },
+    {
+      "scene_name": "lasiesta_i_oc_01",
+      "frame_count": 250,
+      "resolution": {
+        "width": 352,
+        "height": 288,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\lasiesta_i_oc_01\\input",
+      "groundtruth_dir": "data\\extra\\lasiesta_i_oc_01\\groundtruth",
+      "roi_path": "data\\extra\\lasiesta_i_oc_01\\ROI.bmp",
+      "overlay_report": "reports\\lasiesta_i_oc_01_overlay.png"
+    },
+    {
+      "scene_name": "lasiesta_i_si_01",
+      "frame_count": 300,
+      "resolution": {
+        "width": 352,
+        "height": 288,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\lasiesta_i_si_01\\input",
+      "groundtruth_dir": "data\\extra\\lasiesta_i_si_01\\groundtruth",
+      "roi_path": "data\\extra\\lasiesta_i_si_01\\ROI.bmp",
+      "overlay_report": "reports\\lasiesta_i_si_01_overlay.png"
+    },
+    {
+      "scene_name": "lasiesta_i_si_02",
+      "frame_count": 300,
+      "resolution": {
+        "width": 352,
+        "height": 288,
+        "channels": 3
+      },
+      "input_dir": "data\\extra\\lasiesta_i_si_02\\input",
+      "groundtruth_dir": "data\\extra\\lasiesta_i_si_02\\groundtruth",
+      "roi_path": "data\\extra\\lasiesta_i_si_02\\ROI.bmp",
+      "overlay_report": "reports\\lasiesta_i_si_02_overlay.png"
+    }
+  ]
+}
